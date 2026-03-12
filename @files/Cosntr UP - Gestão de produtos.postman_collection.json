@@ -1,0 +1,1078 @@
+{
+  "info": {
+    "_postman_id": "a869dfb1-128a-477f-8be2-ce41355a1123",
+    "name": "Cosntr UP - Gestão de produtos",
+    "description": "Para facilitar, estou deixando esta documentação pronta para ajudar nos teste.\n\nEm toda requisição eu estou pedindo um token, sei que não é a forma correta de implementar uma validação por token mas é apenas para demontrar o uso de um middleware.\n\nCrie uma variavel API_TOKEN no seu .env e coloque o valor de 159357\n\nEx: API_TOKEN='159357'",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53124802"
+  },
+  "item": [
+    {
+      "name": "Listar Produtos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "159357",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{$URL}}/api/produtos/listar",
+          "host": [
+            "{{$URL}}"
+          ],
+          "path": [
+            "api",
+            "produtos",
+            "listar"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{$URL}}/api/produtos/listar",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "listar"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:00:42 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Cimento CP II\",\n        \"descricao\": \"Cimento Portland composto para uso geral.\",\n        \"marca\": \"Votorantim\",\n        \"preco\": \"25.50\",\n        \"estoque\": 100,\n        \"created_at\": \"2026-03-11T22:28:26.000000Z\",\n        \"updated_at\": \"2026-03-11T22:28:26.000000Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Criar Produtos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "159357",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "nome",
+              "value": "Oculos de Proteção 2",
+              "type": "text",
+              "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+            },
+            {
+              "key": "descricao",
+              "value": "Oculos de proteção preto, plastico resistente e proteção contra luz solar.",
+              "type": "text",
+              "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+            },
+            {
+              "key": "preco",
+              "value": "23.00",
+              "type": "text",
+              "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+            },
+            {
+              "key": "marca",
+              "value": "Optpro",
+              "type": "text",
+              "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+            },
+            {
+              "key": "estoque",
+              "value": "20",
+              "type": "text",
+              "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{$URL}}/api/produtos/criar",
+          "host": [
+            "{{$URL}}"
+          ],
+          "path": [
+            "api",
+            "produtos",
+            "criar"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Camisa",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Camisa 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "23.00",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Adidas",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/criar",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "criar"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:03:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "56"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Produto criado com sucesso\"\n}"
+        },
+        {
+          "name": "unauthorized",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "159357",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Oculos de Proteção 2",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Oculos de proteção preto, plastico resistente e proteção contra luz solar.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "23.00",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Optpro",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/criar",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "criar"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:22:04 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "56"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"tipo\": \"erro\",\n    \"mensagem\": {\n        \"token\": [\n            \"Token não informado\"\n        ]\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Editar Produtos",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "token",
+            "value": "159357",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "nome",
+              "value": "Oculos de Proteção",
+              "type": "text",
+              "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+            },
+            {
+              "key": "descricao",
+              "value": "Oculos de proteção preto, plastico resistente e proteção contra luz solar.",
+              "type": "text",
+              "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+            },
+            {
+              "key": "preco",
+              "value": "80.10",
+              "type": "text",
+              "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+            },
+            {
+              "key": "marca",
+              "value": "Optpro",
+              "type": "text",
+              "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+            },
+            {
+              "key": "estoque",
+              "value": "10",
+              "type": "text",
+              "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{$URL}}/api/produtos/editar/2",
+          "host": [
+            "{{$URL}}"
+          ],
+          "path": [
+            "api",
+            "produtos",
+            "editar",
+            "2"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Calça",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Calça 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "80.10",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Nike",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/editar/1",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "editar",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:05:12 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Produto atualizado com sucesso\"\n}"
+        },
+        {
+          "name": "not found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Calça",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Calça 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "80.10",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Nike",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/editar/2",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "editar",
+                "2"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:04:57 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "58"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Produto não encontrado\"\n}"
+        },
+        {
+          "name": "unauthorized",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "159357",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Oculos de Proteção",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Oculos de proteção preto, plastico resistente e proteção contra luz solar.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "80.10",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Optpro",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/editar/3",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "editar",
+                "3"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 12 Mar 2026 02:57:00 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"tipo\": \"erro\",\n    \"mensagem\": {\n        \"token\": [\n            \"Token não informado\"\n        ]\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Excluir Produtos",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "token",
+            "value": "159357",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "nome",
+              "value": "Camisa",
+              "type": "text",
+              "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+            },
+            {
+              "key": "descricao",
+              "value": "Camisa 100% algodão da melhor malha que existe no mercado.",
+              "type": "text",
+              "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+            },
+            {
+              "key": "preco",
+              "value": "23.00",
+              "type": "text",
+              "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+            },
+            {
+              "key": "marca",
+              "value": "Adidas",
+              "type": "text",
+              "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+            },
+            {
+              "key": "estoque",
+              "value": "20",
+              "type": "text",
+              "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{$URL}}/api/produtos/excluir/2",
+          "host": [
+            "{{$URL}}"
+          ],
+          "path": [
+            "api",
+            "produtos",
+            "excluir",
+            "2"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Camisa",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Camisa 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "23.00",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Adidas",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/excluir/2",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "excluir",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:00:37 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "57"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Produto excluído com sucesso\"\n}"
+        },
+        {
+          "name": "not found",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Camisa",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Camisa 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "23.00",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Adidas",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/excluir/2",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "excluir",
+                "2"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 11 Mar 2026 23:04:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Produto não encontrado\"\n}"
+        },
+        {
+          "name": "unauthorized",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "159357",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "nome",
+                  "value": "Camisa",
+                  "type": "text",
+                  "uuid": "dd0c7774-0e64-4df9-b9a6-75189b9d8529"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Camisa 100% algodão da melhor malha que existe no mercado.",
+                  "type": "text",
+                  "uuid": "9fb7c277-b188-4105-9c15-8a4cdf5d6591"
+                },
+                {
+                  "key": "preco",
+                  "value": "23.00",
+                  "type": "text",
+                  "uuid": "269e1dda-12b3-4817-a144-8dd7c1b58f49"
+                },
+                {
+                  "key": "marca",
+                  "value": "Adidas",
+                  "type": "text",
+                  "uuid": "bd71808e-6162-4b09-9086-5a072e8f2f3f"
+                },
+                {
+                  "key": "estoque",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "cc9a449c-9bd8-4226-ad5b-8b1ede04d654"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{$URL}}/api/produtos/excluir/2",
+              "host": [
+                "{{$URL}}"
+              ],
+              "path": [
+                "api",
+                "produtos",
+                "excluir",
+                "2"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.30"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 12 Mar 2026 02:58:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"tipo\": \"erro\",\n    \"mensagem\": {\n        \"token\": [\n            \"Token não informado\"\n        ]\n    }\n}"
+        }
+      ]
+    }
+  ]
+}

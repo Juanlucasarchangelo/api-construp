@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://media.giphy.com/media/Ll22OhMLAlVDb8UQWe/giphy.gif" width="120"/>
   <h1>📂 Sistema de CRUD básico</h1>
-  <p>Todas as redes sociais e páginas que faço parte.</p>
+  <p>Todas as redes sociais e páginas das quais faço parte.</p>
 
   <a href="https://www.youtube.com/@ArchaniaSolum" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"/>
@@ -21,14 +21,17 @@
 
 ## 📖 Visão Geral
 
-Este projeto tem como objetivo demontrar uma fração das minhas habilidades em programação usando as linguagens citadas abaixo.
+Este projeto tem como objetivo demonstrar uma fração das minhas habilidades em programação usando as linguagens citadas abaixo.  
+Para facilitar a análise do teste, dentro da pasta @files disponibilizei uma collection do POSTMAN já com as rotas configuradas para teste da API.
+
+Segue também documentação feita para caso haja dúvidas:  
+https://documenter.getpostman.com/view/53124802/2sBXiesuH6#15086650-0a7c-4a15-af9d-513c7e62bae8
 
 ---
 
 ## 🎯 Objetivos
 
 -   Gerenciar produtos e descrições.
--   Fornecer uma interface intuitiva para usuários internos.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -43,7 +46,6 @@ Este projeto tem como objetivo demontrar uma fração das minhas habilidades em 
 ## 🚀 Funcionalidades
 
 -   [ ] Cadastro e gerenciamento de produtos.
--   [ ] Logs de auditoria de acessos e alterações.
 
 ---
 
@@ -64,12 +66,11 @@ npm install --ignore-platform-reqs
 cp .env.example .env
 php artisan key:generate
 
-# Crie uma variavel dentro do .env
+# Crie uma variável dentro do .env
 API_TOKEN='159357'
 
-# Rode a migration junto as seeders
+# Rode a migration junto com as seeders
 php artisan migrate --seed
 
 # Rode o serve para subir a aplicação
 php artisan serve
-```
