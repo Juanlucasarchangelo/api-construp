@@ -24,6 +24,18 @@ class Kernel extends HttpKernel
     ];
 
     /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array<string, class-string|string>
+     */
+    protected $routeMiddleware = [
+
+        'token' => \App\Http\Middleware\LazyValidation::class,
+    ];
+
+    /**
      * The application's route middleware groups.
      *
      * @var array<string, array<int, class-string|string>>
@@ -40,7 +52,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];

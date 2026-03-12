@@ -56,11 +56,20 @@ git clone https://github.com/Juanlucasarchangelo/api-construp.git
 # Acesse o diretório
 cd api-construp
 
-# Instale as dependências (exemplo Laravel)
+# Instale as dependências
 composer install --ignore-platform-reqs
-npm install
+npm install --ignore-platform-reqs
 
 # Configure o .env
 cp .env.example .env
 php artisan key:generate
+
+# Crie uma variavel dentro do .env
+API_TOKEN='159357'
+
+# Rode a migration junto as seeders
+php artisan migrate --seed
+
+# Rode o serve para subir a aplicação
+php artisan serve
 ```

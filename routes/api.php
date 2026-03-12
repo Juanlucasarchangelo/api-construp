@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'produtos', 'middleware' => ['token']], function () {
+    Route::get('/listar', [App\Http\Controllers\Produtos::class, 'index']);
+    Route::post('/criar', [App\Http\Controllers\Produtos::class, 'criar']);
+    Route::put('/editar/{id}', [App\Http\Controllers\Produtos::class, 'editar']);
+    Route::delete('/excluir/{id}', [App\Http\Controllers\Produtos::class, 'excluir']);
+});
